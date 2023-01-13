@@ -1,0 +1,48 @@
+package pkg1;
+import java.util.Random;
+import java.util.Scanner;
+
+class Game{
+
+    int num;
+    int user_in;
+    public Game(){
+        Random rand = new Random();
+        this.num = rand.nextInt(1,50);
+        System.out.println(num);
+    }
+
+    void takeUserInput(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the Number between 1 to 50");
+        this.user_in = sc.nextInt();
+    }
+
+    void isCorrectNumber(){
+        if(num == user_in){
+            //System.out.println("You got it bro!");
+        }
+        else if (user_in<num){
+            System.out.println("Too Low\n Try Again");
+        }
+        else if (user_in>num){
+            System.out.println("Too High\n Try Again");
+        }
+    }
+}
+
+
+public class Exercise_Guess_the_number {
+    public static void main(String[] args) {
+        Game ga = new Game();
+        while (true) {
+
+            ga.takeUserInput();
+            ga.isCorrectNumber();
+            if(ga.num == ga.user_in){
+                System.out.println("You got it bro!");
+                break;
+            }
+        }
+    }
+}
