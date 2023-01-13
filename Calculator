@@ -1,0 +1,35 @@
+package pkg1;
+
+// Operators //
+
+import java.util.Scanner;
+
+public class Calculator {
+    int a,b,s;
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Calculator");
+        System.out.println("Select Operation");
+        System.out.println("+");
+        System.out.println("-");
+        System.out.println("*");
+        System.out.println("/");
+        char ch = sc.next().charAt(0);
+        System.out.println("enter two numbers");
+        Calculator A = new Calculator();
+        A.a = sc.nextInt();
+        Calculator B = new Calculator();
+        B.b = sc.nextInt();
+        if(ch == '+')
+            System.out.println(A.a+ B.b);
+        else if(ch == '-')
+            System.out.println(A.a- B.b);
+        else if (ch == '*')
+            System.out.println(A.a*B.b);
+        else if(ch == '/')
+            System.out.println(A.a/B.b);
+        else
+            System.out.println("Enter the valid numbers");
+    }
+}
